@@ -27,9 +27,6 @@ Denna använder Google fria typsnitt: SourGummy-Black.ttf
 Finns att hämta hem här: https://fonts.google.com/specimen/Sour+Gummy?categoryFilters=Feeling:%2FExpressive%2FCute&preview.script=Latn
 Typsnitett ska ligga i Home Assistant mappen \config\media\SourGummy-Black.ttf
 
-Lägg in innehållet i filen configuration-yaml i Home Assistant configurayion.yaml på rätt plats.
-Detat för att skapa sensorer som automationen kan ansopa utan att själv behöva ha koll på vilka pollen som är mätbara.
-
 Klista sedan in koden från automations-filen i en HA automation.
 Glöm inte att ändra till korrekt OEPL-tagg/Display.
 
