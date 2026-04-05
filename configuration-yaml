@@ -1,0 +1,41 @@
+template:
+  - sensor:
+      - name: "Pollen Skövde förhöjda"
+        unique_id: pollen_skovde_forhojda
+        state: >
+          {% set allergener = [
+            ('Al',         states('sensor.pollen_skovde_al')),
+            ('Alm',        states('sensor.pollen_skovde_alm')),
+            ('Björk',      states('sensor.pollen_skovde_bjork')),
+            ('Hassel',     states('sensor.pollen_skovde_hassel')),
+            ('Sälg/vide',  states('sensor.pollen_skovde_salg_och_viden')),
+            ('Ek',         states('sensor.pollen_skovde_ek')),
+            ('Gräs',       states('sensor.pollen_skovde_gras')),
+            ('Gråbo',      states('sensor.pollen_skovde_grabo')),
+            ('Bok',        states('sensor.pollen_skovde_bok')),
+            ('Ambrosia',   states('sensor.pollen_skovde_malortsambrosia'))
+          ] %}
+          {% set forhojda = allergener | selectattr('1', 'ne', 'Inga halter')
+            | selectattr('1', 'ne', 'n/a')
+            | selectattr('1', 'ne', 'unavailable') | list %}
+          {% if forhojda | count == 0 %}Inga halter
+          {% else %}{{ forhojda | map(attribute='0') | join(', ') }}{% endif %}
+        attributes:
+          forhojda_lista: >
+            {% set allergener = [
+              ('Al',        states('sensor.pollen_skovde_al'),        state_attr('sensor.pollen_skovde_al','named_state')),
+              ('Alm',       states('sensor.pollen_skovde_alm'),       state_attr('sensor.pollen_skovde_alm','named_state')),
+              ('Björk',     states('sensor.pollen_skovde_bjork'),     state_attr('sensor.pollen_skovde_bjork','named_state')),
+              ('Hassel',    states('sensor.pollen_skovde_hassel'),    state_attr('sensor.pollen_skovde_hassel','named_state')),
+              ('Sälg/vide', states('sensor.pollen_skovde_salg_och_viden'), state_attr('sensor.pollen_skovde_salg_och_viden','named_state')),
+              ('Ek',        states('sensor.pollen_skovde_ek'),        state_attr('sensor.pollen_skovde_ek','named_state')),
+              ('Gräs',      states('sensor.pollen_skovde_gras'),      state_attr('sensor.pollen_skovde_gras','named_state')),
+              ('Gråbo',     states('sensor.pollen_skovde_grabo'),     state_attr('sensor.pollen_skovde_grabo','named_state')),
+              ('Bok',       states('sensor.pollen_skovde_bok'),       state_attr('sensor.pollen_skovde_bok','named_state')),
+              ('Ambrosia',  states('sensor.pollen_skovde_malortsambrosia'), state_attr('sensor.pollen_skovde_malortsambrosia','named_state'))
+            ] %}
+            {{ allergener
+              | selectattr('1', 'ne', 'Inga halter')
+              | selectattr('1', 'ne', 'n/a')
+              | selectattr('1', 'ne', 'unavailable')
+              | list | tojson }}
