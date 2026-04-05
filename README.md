@@ -1,5 +1,5 @@
 # OpenEPaperLink-DagensCitat
-Dagens citat i en OEPL-display
+Dagens citat i en OEPL-display ("Open EPaperLink")
 
 
 Följande måste finnas i Home Assistant configuration.yaml.
@@ -19,3 +19,6 @@ sensor:
     json_attributes:
       - q
       - a
+
+Texten som finns i filen HA-Automation är mall för att klistra om som Home Assistant automation.
+OBS! Byt ut till rätt OEPL-tagg/Display.
