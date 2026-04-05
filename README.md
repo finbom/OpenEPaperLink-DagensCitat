@@ -32,3 +32,8 @@ Detat för att skapa sensorer som automationen kan ansopa utan att själv behöv
 
 Klista sedan in koden från automations-filen i en HA automation.
 Glöm inte att ändra till korrekt OEPL-tagg/Display.
+
+
+Exempel:
+![DagensCitat-Exempel](https://github.com/user-attachments/assets/d4a3bd8c-7fe2-4c71-ba86-3bc9420e6873)
+
