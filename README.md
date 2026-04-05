@@ -28,5 +28,7 @@ Finns att hämta hem här: https://fonts.google.com/specimen/Sour+Gummy?category
 Typsnittet ska ligga i Home Assistant mappen \config\media\SourGummy-Black.ttf
 
 Exempel:
+
+
 ![DagensCitat-Exempel](https://github.com/user-attachments/assets/d4a3bd8c-7fe2-4c71-ba86-3bc9420e6873)
 
