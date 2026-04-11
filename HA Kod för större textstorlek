@@ -1,0 +1,81 @@
+- type: rectangle
+  x_start: 6
+  y_start: 6
+  x_end: 394
+  y_end: 294
+  outline: red
+  width: 2
+  fill: white
+- type: rectangle
+  x_start: 10
+  y_start: 10
+  x_end: 390
+  y_end: 290
+  outline: black
+  width: 1
+  fill: white
+- type: rectangle
+  x_start: 10
+  y_start: 10
+  x_end: 390
+  y_end: 52
+  outline: black
+  width: 1
+  fill: red
+- type: text
+  value: Dagens Citat
+  x: 200
+  "y": 16
+  size: 22
+  color: white
+  font: ../../media/SourGummy-Black.ttf
+  anchor: mt
+- type: text
+  value: >-
+    {{ now().strftime('%A %-d %B %Y') | replace('Monday','Måndag') |
+    replace('Tuesday','Tisdag') | replace('Wednesday','Onsdag') |
+    replace('Thursday','Torsdag') | replace('Friday','Fredag') |
+    replace('Saturday','Lördag') | replace('Sunday','Söndag') |
+    replace('January','januari') | replace('February','februari') |
+    replace('March','mars') | replace('April','april') | replace('May','maj') |
+    replace('June','juni') | replace('July','juli') |
+    replace('August','augusti') | replace('September','september') |
+    replace('October','oktober') | replace('November','november') |
+    replace('December','december') }}
+  x: 200
+  "y": 37
+  size: 11
+  color: white
+  font: ../../media/SourGummy-Black.ttf
+  anchor: mt
+- type: text
+  value: "\""
+  x: 200
+  "y": 72
+  size: 52
+  color: red
+  font: ../../media/SourGummy-Black.ttf
+  anchor: mt
+- type: text
+  value: "{{ state_attr('sensor.daily_quote','q') | wordwrap(27, true, '\\n') }}"
+  x: 30
+  "y": 108
+  size: 22
+  color: black
+  font: ../../media/SourGummy-Black.ttf
+  wrap: 340
+- type: line
+  x_start: 160
+  y_start: 255
+  x_end: 240
+  y_end: 255
+  fill: red
+  width: 2
+- type: text
+  value: — {{ state_attr('sensor.daily_quote','a') }}
+  x: 200
+  "y": 268
+  size: 13
+  color: black
+  font: ../../media/SourGummy-Black.ttf
+  anchor: mt
