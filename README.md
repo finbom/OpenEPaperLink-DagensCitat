@@ -1,5 +1,5 @@
 # OpenEPaperLink-DagensCitat
-Dagens citat i en OEPL-display ("Open EPaperLink")
+Dagens citat i en OEPL-display ("Open EPaperLink"). 
 
 
 1. Följande måste finnas i Home Assistant configuration.yaml.
